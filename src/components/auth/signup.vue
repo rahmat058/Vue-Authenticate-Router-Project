@@ -88,7 +88,11 @@ export default {
       };
       console.log(formData);
 
-      axios.post('/users.json', formData)
+      axios.post('/signupNewUser?key=AIzaSyBTPbyptcY8LRq0vZQ88nfqhQP7tsQgQ7E', {
+        email: formData.email,
+        password: formData.password,
+        returnSecureToken: true
+      })
         .then(res => console.log(res))
         .catch(err => console.log(err))
     }
